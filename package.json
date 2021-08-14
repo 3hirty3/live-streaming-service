@@ -1,0 +1,63 @@
+{
+    "name": "live-streaming-service",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/satyampatro/live-streaming-service.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/satyampatro/live-streaming-service/issues"
+    },
+    "homepage": "https://github.com/satyampatro/live-streaming-service#readme",
+    "scripts": {
+        "build": "rimraf ./dist && tsc",
+        "start:dev": "NODE_ENV=development nodemon",
+        "start": "npm run build && node build/index.js",
+        "lint": "eslint . --ext .ts",
+        "prettier-format": "run-script-os",
+        "prettier-format:win32": "prettier --config .prettierrc \"./src/**/*.ts\" --write",
+        "prettier-format:darwin:linux": "prettier --config .prettierrc 'src/**/*.ts' --write",
+        "prettier-format:default": "prettier --config .prettierrc 'src/**/*.ts' --write",
+        "prettier-watch": "run-script-os",
+        "prettier-watch:win32": "onchange \"src/**/*.ts\" -- prettier --write {{changed}}",
+        "prettier-watch:darwin:linux": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
+        "prettier-watch:default": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
+        "test": "jest",
+        "test:dev": "jest --watchAll"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run build",
+            "pre-push": "npm run build"
+        }
+    },
+    "dependencies": {
+      "eslint-plugin-jest": "^24.1.0",
+      "jest": "^26.5.3",
+      "ts-jest": "^26.4.1"
+    },
+    "devDependencies": {
+        "@types/cookie-parser": "^1.4.2",
+        "@types/cors": "^2.8.9",
+        "@types/cryptr": "^4.0.1",
+        "@types/express": "^4.17.9",
+        "@types/jsonwebtoken": "^8.5.0",
+        "@types/morgan": "^1.9.2",
+        "@types/qs": "^6.9.4",
+        "@types/redis": "^2.8.28",
+        "@types/request": "^2.48.5",
+        "@types/sha256": "^0.2.0",
+        "@types/sns-validator": "^0.3.0",
+        "@types/socket.io": "^2.1.13",
+        "@types/swagger-jsdoc": "^6.0.0",
+        "@types/swagger-ui-express": "^4.1.2",
+        "@types/validator": "^13.1.3",
+        "nodemon": "^2.0.6",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.1.3"
+    }
+}

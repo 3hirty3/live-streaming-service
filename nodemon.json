@@ -1,0 +1,6 @@
+{
+    "ignore": ["dist/*"],
+    "watch": ["src", "bin", "test"],
+    "ext": ".ts,.js,.pug,.css",
+    "exec": "ts-node ./src/index.ts"
+}
